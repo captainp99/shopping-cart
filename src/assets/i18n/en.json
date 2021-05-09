@@ -1,0 +1,91 @@
+{
+  "header" : {
+      "home" : "Home",
+      "search" : "Search",
+      "login" : "Login",
+      "logout" : "Logout"
+
+    },
+
+    "home" :{
+      "details" : "Details",
+      "price" : "Price",
+      "currency" : "USD"
+    },
+    "footer" : {
+      "copyRight" : "CopyRight"
+    },
+    "productDetail" : {
+      "reviews" : "reviews",
+      "includesTax" : "includes tax",
+      "addToCart" : "Add To Cart",
+      "model" : "Model",
+      "color" : "Color",
+      "delivery" : "Delivery"
+    },
+    "thankYou" : {
+      "thankYouMessage" : "Thank You For Placing Order You Will Recieve Details on Mail soon..."
+    },
+    "cartDetail" : {
+      "emptyCartMessage" : "Please Add some items to cart first..Go to home",
+      "product" : "Product",
+      "price" : "Price",
+      "quantity" : "Quantity",
+      "remove" :"Remove",
+      "category" : "Category",
+      "instructionForSeller" : "INSTRUCTIONS FOR SELLER",
+      "instructionForSellerMessage" : "If you have some information for the seller you can leave them in the box below",
+      "orderSummary" : "ORDER SUMMARY",
+      "orderSummaryMessage" : "Shipping and additional costs are calculated based on values you have entered." ,
+      "orderSubtotal" : "Order Subtotal",
+      "shipping" : "Shipping and handling",
+      "tax" : "Tax",
+      "total" : "Total",
+      "procceed" : "Procceed to checkout"
+
+    },
+    "checkOutPage" : {
+      "yourCart" : "Your Cart",
+      "deliveryCharge" : "Delivery Charge",
+      "total" : "Total (USD)",
+      "billingAddress" : "Billing Address",
+      "firstName" : "First Name",
+      "lastName" : "Last Name",
+      "username" : "Username",
+      "email" : "Email",
+      "emailPlaceholder" : "you@example.com",
+      "address" : "Address",
+      "addressPlaceholder" : "Apartment or suite",
+      "country" : "Country",
+      "state" : "State",
+      "zip" : "Zip",
+      "shippingAddress" : "Shipping address is the same as my billing address",
+      "saveInfo" : "Save this information for next time",
+      "payment" : "Payment",
+      "creditCard" : "Credit Card",
+      "debitCard" : "Debit Card",
+      "payPal" : "PayPal",
+      "nameOnCard" : "Name on Card",
+      "fullNameDisplayed" : "Full name as displayed on card",
+      "creditCardNumber" : "Credit card number",
+      "expiration" : "Expiration",
+      "cvv" : "CVV",
+      "continueToCheckout" : "Continue to checkout",
+      "requiredErrorMessage" : "This field is required",
+      "emailRegexFailMessage" : "Email should be valid",
+      "zipRegexFailMessage" : "zip code should be of 6 digits",
+      "ccNumberRegexFailMessage" : "credit-card number should be of 16 digits",
+      "ccCvvRegexFailMessage" : "credit-card cvv should be of 3 digits"
+
+    },
+
+    "login" : {
+      "username" : "Username",
+      "password" : "Password",
+      "submit" : "Submit",
+      "backToHome" : "Back To Home",
+      "application" : "Application",
+      "loginPage" : "Login Page",
+      "loginMessage" : "Login from here to Access."
+    }
+}

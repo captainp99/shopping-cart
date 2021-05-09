@@ -1,0 +1,90 @@
+{
+    "header" : {
+        "home" : "Domicile",
+        "search" : "Rechercher",
+        "login" : "Connexion",
+        "logout" : "Se déconnecter"
+  
+      },
+
+      "home" :{
+        "details" : "Des détails",
+        "price" : "Prix",
+        "currency": "EUR"
+      },
+      "footer" : {
+        "copyRight" : "Droits d'auteur"
+      },
+      "productDetail" : {
+        "reviews" : "commentaires",
+        "includesTax" : "comprend les taxes",
+        "addToCart" : "Ajouter au panier",
+        "model" : "Modèle",
+        "color" : "Couleur",
+        "delivery" : "Livraison"
+      },
+      "thankYou" : {
+        "thankYouMessage" : "Merci d'avoir passé commande, vous recevrez bientôt des détails sur le courrier ..."
+      },
+      "cartDetail" : {
+        "emptyCartMessage" : "Veuillez d'abord ajouter quelques articles au panier.",
+        "product" : "Produit",
+        "price" : "Prix",
+        "quantity" : "Quantité",
+        "remove" :"Supprimer",
+        "category" : "Catégorie",
+        "instructionForSeller" : "INSTRUCTIONS POUR LE VENDEUR",
+        "instructionForSellerMessage" : "Si vous avez des informations pour le vendeur, vous pouvez les laisser dans la case ci-dessous",
+        "orderSummary" : "RÉCAPITULATIF DE LA COMMANDE",
+        "orderSummaryMessage" : "Les frais d'expédition et supplémentaires sont calculés en fonction des valeurs que vous avez saisies." ,
+        "orderSubtotal" : "sous-total de la commande",
+        "shipping" : "Frais de port et de manutention",
+        "tax" : "Impôt",
+        "total" : "Le total",
+        "procceed" : "Procéder au paiement"
+  
+      },
+      "checkOutPage" : {
+        "yourCart" : "Votre panier",
+        "deliveryCharge" : "Frais de livraison",
+        "total" : "Le total (EUR)",
+        "billingAddress" : "adresse de facturation",
+        "firstName" : "Prénom",
+        "lastName" : "Nom de famille",
+        "username" : "Nom d'utilisateur",
+        "email" : "E-mail",
+        "emailPlaceholder" : "you@example.com",
+        "address" : "Adresse",
+        "addressPlaceholder" : "Appartement ou suite",
+        "country" : "Pays",
+        "state" : "État",
+        "zip" : "Zipper",
+        "shippingAddress" : "L'adresse de livraison est la même que mon adresse de facturation",
+        "saveInfo" : "Enregistrez ces informations pour la prochaine fois",
+        "payment" : "Paiement",
+        "creditCard" : "Carte de crédit",
+        "debitCard" : "Carte de débit",
+        "payPal" : "Pay Pal",
+        "nameOnCard" : "Nom sur la carte",
+        "fullNameDisplayed" : "Nom complet tel qu'affiché sur la carte",
+        "creditCardNumber" : "Numéro de Carte de Crédit",
+        "expiration" : "Expiration",
+        "cvv" : "CVV",
+        "continueToCheckout" : "Continuer à payer",
+        "requiredErrorMessage" : "Ce champ est requis",
+        "emailRegexFailMessage" : "L'e-mail doit être valide",
+        "zipRegexFailMessage" : "le code postal doit être composé de 6 chiffres",
+        "ccNumberRegexFailMessage" : "le numéro de carte de crédit doit être composé de 16 chiffres",
+        "ccCvvRegexFailMessage" : "le cvv de la carte de crédit doit être composé de 3 chiffres"
+  
+      },
+      "login" : {
+        "username" : "Nom d'utilisateur",
+        "password" : "Mot de passe",
+        "submit" : "Soumettre",
+        "backToHome" : "De retour à la maison",
+        "application" : "Application",
+        "loginPage" : "Page de connexion",
+        "loginMessage" : "Connectez-vous d'ici pour accéder."
+      }
+  }

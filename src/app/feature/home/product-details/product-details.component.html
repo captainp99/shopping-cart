@@ -1,0 +1,74 @@
+<!--Section: Block Content-->
+<section style="margin-top:1rem">
+
+    <div class="row">
+      <div class="col-md-6 mb-4 mb-md-0">
+  
+        <div id="mdb-lightbox-ui"></div>
+  
+        <div class="mdb-lightbox">
+  
+          <div class="row product-gallery mx-1">
+  
+            <div class="col-12 mb-0">
+              <figure class="view overlay rounded z-depth-1 main-img">
+                  <img src="{{product.imgUrl}}"
+                    class="img-fluid z-depth-1" style="height: 30rem">
+              </figure>
+            </div>
+            
+          </div>
+  
+        </div>
+  
+      </div>
+      <div class="col-md-6">
+  
+        <h5>{{product.name}}</h5>
+        <p class="mb-2 text-muted text-uppercase small">{{product.type}}</p>
+        <div class="rating">
+          <div class="stars" >
+            <span class="fa fa-star checked" style="color : rgb(255, 94, 0);"></span>
+            <span class="fa fa-star checked" style="color : rgb(255, 94, 0);"></span>
+            <span class="fa fa-star checked" style="color : rgb(255, 94, 0);"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+          </div>
+          <span class="review-no">41 {{'productDetail.reviews' | translate}}</span>
+        </div>
+        <p></p>
+        <p><span class="mr-1"><strong>{{product.price  | currency: ('home.currency' | translate) }}</strong></span> <small>*{{'productDetail.includesTax' | translate}}</small></p>
+        <p class="pt-1">{{product.desc}}</p>
+        <div class="table-responsive">
+          <table class="table table-sm table-borderless mb-0">
+            <tbody>
+              <tr>
+                <th class="pl-0 w-25" scope="row"><strong>{{'productDetail.model' | translate}}</strong></th>
+                <td>{{product.model}}</td>
+              </tr>
+              <tr>
+                <th class="pl-0 w-25" scope="row"><strong>{{'productDetail.color' | translate}}</strong></th>
+                <td>{{product.color}}</td>
+              </tr>
+              <tr>
+                <th class="pl-0 w-25" scope="row"><strong>{{'productDetail.delivery' | translate}}</strong></th>
+                <td>USA, France</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <hr>
+        <div class="table-responsive mb-2">
+          <table class="table table-sm table-borderless">
+            <tbody>
+            
+            </tbody>
+          </table>
+        </div>
+        <button type="button" (click) = "addToCart()" class="btn btn-primary btn-md mr-1 mb-2"><i class="fa fa-shopping-cart " aria-hidden="false"></i>   {{'productDetail.addToCart' | translate}}</button>
+        
+      </div>
+    </div>
+  
+  </section>
+  <!--Section: Block Content-->

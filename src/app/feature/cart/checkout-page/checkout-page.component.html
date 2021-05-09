@@ -1,0 +1,222 @@
+<div class="container">
+    <div class="py-5 text-center">
+    </div>
+  
+    <div class="row">
+      <div class="col-md-4 order-md-2 mb-4">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+          <span class="text-muted">{{'checkOutPage.yourCart' | translate}}</span>
+          <span class="badge badge-secondary badge-pill">{{cartItmesCount}}</span>
+        </h4>
+        <ul class="list-group mb-3">
+          <li *ngFor="let cart of cartItems" class="list-group-item d-flex justify-content-between lh-condensed">
+            <div class="text-success">
+              <h6 class="my-0">{{cart.cartList.name}}</h6>
+            </div >
+            <span class="text-success">{{cart.cartList.price  | currency: ('home.currency' | translate) }} x {{cart.cou}}</span>
+          </li>
+          
+          <li class="list-group-item d-flex justify-content-between bg-light">
+            <div >
+              <h6 class="my-0 text-muted">{{'checkOutPage.deliveryCharge' | translate}}</h6>
+            </div>
+            <span class="text-muted">+{{10  | currency: ('home.currency' | translate)}}</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between">
+            <span>{{'checkOutPage.total' | translate}}</span>
+            <strong>{{cartTotal + 10  | currency: ('home.currency' | translate)}}</strong>
+          </li>
+        </ul>
+  
+        <!-- <form class="card p-2">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Promo code">
+            <div class="input-group-append">
+              <button type="submit" class="btn btn-secondary">Redeem</button>
+            </div>
+          </div>
+        </form> -->
+      </div>
+      <div class="col-md-8 order-md-1">
+        <h4 class="mb-3">{{'checkOutPage.billingAddress' | translate}}</h4>
+        <form class="needs-validation" ngNativeValidate novalidate [formGroup]="bookingForm" 
+        (ngSubmit)="onFormSubmit()" >
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <div class="form-group">
+                <label for="firstName">{{'checkOutPage.firstName' | translate}}</label>
+                <input type="text" class="form-control" id="firstName" formControlName="firstName" required [ngClass]="getControlValidationClasses(bookingForm.controls.firstName)" placeholder="{{'checkOutPage.firstName' | translate}}">
+                <div class="invalid-feedback" *ngIf="bookingForm.controls.firstName.touched && bookingForm.controls.firstName.errors?.required">
+                  {{'checkOutPage.requiredErrorMessage' | translate}}
+              </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <div class="form-group">
+                <label for="lastName">{{'checkOutPage.lastName' | translate}}</label>
+                <input type="text" class="form-control" id="lastName" formControlName="lastName" required [ngClass]="getControlValidationClasses(bookingForm.controls.lastName)" placeholder="{{'checkOutPage.lastName' | translate}}">
+                <div class="invalid-feedback" *ngIf="bookingForm.controls.lastName.touched && bookingForm.controls.lastName.errors?.required">
+                  {{'checkOutPage.requiredErrorMessage' | translate}}
+              </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="mb-3">
+            <div class="form-group">
+              <label for="username">{{'checkOutPage.username' | translate}}</label>
+              <input type="text" class="form-control" id="username" formControlName="username" required [ngClass]="getControlValidationClasses(bookingForm.controls.username)" placeholder="{{'checkOutPage.username' | translate}}">
+              <div class="invalid-feedback" *ngIf="bookingForm.controls.username.touched && bookingForm.controls.username.errors?.required">
+                {{'checkOutPage.requiredErrorMessage' | translate}}
+            </div>
+            </div>
+          </div>
+  
+          <div class="mb-3">
+            <div class="form-group">
+              <label for="email">{{'checkOutPage.email' | translate}}</label>
+              <input type="email" class="form-control" id="email" formControlName="email" required [ngClass]="getControlValidationClasses(bookingForm.controls.email)" placeholder="{{'checkOutPage.emailPlaceholder' | translate}}">
+              <div class="invalid-feedback" *ngIf="bookingForm.controls.email.touched && bookingForm.controls.email.errors?.required">
+                {{'checkOutPage.requiredErrorMessage' | translate}}
+            </div>
+            <div class="invalid-feedback" *ngIf="bookingForm.controls.email.touched && bookingForm.controls.email.errors?.pattern ">
+              {{'checkOutPage.emailRegexFailMessage' | translate}}
+            </div>
+            </div>
+          </div>
+  
+          <div class="mb-3">
+            <div class="form-group">
+              <label for="address">{{'checkOutPage.address' | translate}}</label>
+              <input type="address" class="form-control" id="address" formControlName="address" required [ngClass]="getControlValidationClasses(bookingForm.controls.address)" placeholder="{{'checkOutPage.addressPlaceholder' | translate}}">
+              <div class="invalid-feedback" *ngIf="bookingForm.controls.address.touched && bookingForm.controls.address.errors?.required">
+                {{'checkOutPage.requiredErrorMessage' | translate}}
+            </div>
+            </div>
+          </div>
+  
+          <div class="row">
+            <div class="col-md-5 mb-3">
+              <div class="form-group">
+                <label for="country">{{'checkOutPage.country' | translate}}</label>
+                <select class="custom-select d-block w-100" id="country" formControlName="country" required [ngClass]="getControlValidationClasses(bookingForm.controls.country)">
+                  <option value="">Choose...</option>
+                  <option>United States</option>
+                  <option>Europe</option>
+                </select>
+                <div class="invalid-feedback" *ngIf="bookingForm.controls.country.touched && bookingForm.controls.country.errors?.required">
+                  {{'checkOutPage.requiredErrorMessage' | translate}}
+              </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="form-group">
+                <label for="country">{{'checkOutPage.state' | translate}}</label>
+                <select class="custom-select d-block w-100" id="state" formControlName="state" required [ngClass]="getControlValidationClasses(bookingForm.controls.state)">
+                  <option value="">Choose...</option>
+                  <option>California</option>
+                  <option>France</option>
+                </select>
+                <div class="invalid-feedback" *ngIf="bookingForm.controls.state.touched && bookingForm.controls.state.errors?.required">
+                  {{'checkOutPage.requiredErrorMessage' | translate}}
+              </div>
+              </div>
+            </div>
+            <div class="col-md-3 mb-3">
+              <div class="form-group">
+                <label for="zip">{{'checkOutPage.zip' | translate}}</label>
+                <input type="text" class="form-control" id="zip" formControlName="zip" required [ngClass]="getControlValidationClasses(bookingForm.controls.zip)">
+                <div class="invalid-feedback" *ngIf="bookingForm.controls.zip.touched && bookingForm.controls.zip.errors?.required">
+                  {{'checkOutPage.requiredErrorMessage' | translate}}
+              </div>
+              <div class="invalid-feedback" *ngIf="bookingForm.controls.zip.touched && bookingForm.controls.zip.errors?.pattern ">
+                {{'checkOutPage.zipRegexFailMessage' | translate}}
+              </div>
+            </div>
+          </div>
+          </div>
+
+          <hr class="mb-4">
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="same-address">
+            <label class="custom-control-label" for="same-address">{{'checkOutPage.shippingAddress' | translate}}</label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="save-info">
+            <label class="custom-control-label" for="save-info">{{'checkOutPage.saveInfo' | translate}}</label>
+          </div>
+          <hr class="mb-4">
+  
+          <h4 class="mb-3">{{'checkOutPage.payment' | translate}}</h4>
+  
+          <div class="d-block my-3">
+            <div class="custom-control custom-radio">
+              <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+              <label class="custom-control-label" for="credit">{{'checkOutPage.creditCard' | translate}}</label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
+              <label class="custom-control-label" for="debit">{{'checkOutPage.debitCard' | translate}}</label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
+              <label class="custom-control-label" for="paypal">{{'checkOutPage.payPal' | translate}}</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <div class="form-group">
+                <label for="ccName">{{'checkOutPage.nameOnCard' | translate}}</label>
+                <input type="text" class="form-control" id="ccName" formControlName="ccName" required [ngClass]="getControlValidationClasses(bookingForm.controls.ccName)">
+                <small class="text-muted">{{'checkOutPage.fullNameDisplayed' | translate}}</small>
+                <div class="invalid-feedback" *ngIf="bookingForm.controls.ccName.touched && bookingForm.controls.ccName.errors?.required">
+                  {{'checkOutPage.requiredErrorMessage' | translate}}
+              </div>
+            </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <div class="form-group">
+                <label for="ccNumber">{{'checkOutPage.creditCardNumber' | translate}}</label>
+                <input type="text" class="form-control" id="ccNumber" formControlName="ccNumber" required [ngClass]="getControlValidationClasses(bookingForm.controls.ccNumber)">
+                <div class="invalid-feedback" *ngIf="bookingForm.controls.ccNumber.touched && bookingForm.controls.ccNumber.errors?.required">
+                  {{'checkOutPage.requiredErrorMessage' | translate}}
+              </div>
+              <div class="invalid-feedback" *ngIf="bookingForm.controls.ccNumber.touched && bookingForm.controls.ccNumber.errors?.pattern ">
+                {{'checkOutPage.ccNumberRegexFailMessage' | translate}}
+              </div>
+            </div>
+          </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3 mb-3">
+              <div class="form-group">
+              <label for="ccExpiration">{{'checkOutPage.expiration' | translate}}</label>
+              <input type="text" class="form-control" id="ccExpiration" formControlName="ccExpiration" required [ngClass]="getControlValidationClasses(bookingForm.controls.ccExpiration)">
+              <div class="invalid-feedback" *ngIf="bookingForm.controls.ccExpiration.touched && bookingForm.controls.ccExpiration.errors?.required">
+                {{'checkOutPage.requiredErrorMessage' | translate}}
+            </div>
+            </div>
+            </div>
+            <div class="col-md-3 mb-3">
+              <div class="form-group">
+              <label for="ccCvv">{{'checkOutPage.cvv' | translate}}</label>
+              <input type="text" class="form-control" id="ccCvv" formControlName="ccCvv" required [ngClass]="getControlValidationClasses(bookingForm.controls.ccCvv)">
+              <div class="invalid-feedback" *ngIf="bookingForm.controls.ccCvv.touched && bookingForm.controls.ccCvv.errors?.required">
+                {{'checkOutPage.requiredErrorMessage' | translate}}
+            </div>
+            <div class="invalid-feedback" *ngIf="bookingForm.controls.ccCvv.touched && bookingForm.controls.ccCvv.errors?.pattern ">
+              {{'checkOutPage.ccCvvRegexFailMessage' | translate}}
+            </div>
+              </div>
+            </div>
+          </div>
+          <hr class="mb-4">
+          <button class="btn btn-primary btn-lg btn-block" type="submit" [disabled] = "!bookingForm.valid">{{'checkOutPage.continueToCheckout' | translate}}</button>
+        </form>
+      </div>
+    </div>
+  
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+     
+    </footer>
+  </div>

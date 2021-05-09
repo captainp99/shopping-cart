@@ -1,0 +1,40 @@
+  <div class="sidenav" style="
+  height: 100%;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;">
+  <div class="login-main-text" style="transform: translate(-8%,-40%);">
+    <a class="navbar-brand" (click)="goToHome()" style="cursor: pointer;">{{'login.backToHome' | translate}}</a>
+     <h2>{{'login.application' | translate}}<br> {{'login.loginPage' | translate}}</h2>
+     <p>{{'login.loginMessage' | translate}}</p>
+  </div>
+</div>
+<div class="main">
+  <div class="col-md-6 col-sm-12">
+    
+     <div class="login-form">
+      <div class="loginForms">
+        <form class="needs-validation" ngNativeValidate novalidate [formGroup]= "loginForm"
+        (submit)="login()" >
+          <div class="form-group">
+            <label for="username">{{'login.username' | translate}}</label>
+            <input type="text" placeholder="{{'login.username' | translate}}" class="form-control" id="username" formControlName="username" required [ngClass]="getControlValidationClasses(loginForm.controls.username)">
+            <div class="invalid-feedback" *ngIf="loginForm.controls.username.touched && loginForm.controls.username.errors?.required">
+              {{'checkOutPage.requiredErrorMessage' | translate}}
+          </div>
+          </div>
+          <div class="form-group">
+            <label for="password">{{'login.password' | translate}}</label>
+            <input type="password" id="password" placeholder="{{'login.password' | translate}}"  class="form-control" formControlName="password" required [ngClass]="getControlValidationClasses(loginForm.controls.password)">
+            <div class="invalid-feedback" *ngIf="loginForm.controls.password.touched && loginForm.controls.password.errors?.required">
+              {{'checkOutPage.requiredErrorMessage' | translate}}
+          </div>
+          </div>
+          <button type = "submit" class="btn btn-black"  [disabled] = "!loginForm.valid">{{'login.submit' | translate}}</button>
+          </form>
+      </div>
+      
+     </div>
+  </div>
+</div>
+

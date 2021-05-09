@@ -1,0 +1,12 @@
+<div class = "row no-gutters" style="text-align: center; align-content: center; margin-top: 20px;">
+<div *ngFor="let product of productList">
+<div class="card" style="width: 18rem; margin-left: 6.2rem; margin-bottom: 2rem; background-color: rgba(128, 128, 128, 0.219);" >
+    <img class="card-img-top" src="{{product.imgUrl}}" alt="Card image cap" style="border: 5px solid black; width: 100%; height:325px;">
+    <div class="card-body">
+      <h5 class="card-title">{{product.name}}</h5>
+      <p class="card-text">{{'home.price' | translate}} :  {{product.price | currency: ('home.currency' | translate) }} </p>
+      <a class="btn btn-primary" (click) = "productDetail(product)">{{'home.details' | translate}}</a>
+    </div>
+  </div>
+</div>
+</div>
