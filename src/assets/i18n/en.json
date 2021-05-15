@@ -90,6 +90,7 @@
       "backToHome" : "Back To Home",
       "application" : "Application",
       "loginPage" : "Login Page",
-      "loginMessage" : "Login from here to Access."
+      "loginMessage" : "Login from here to Access.",
+      "invalidUser": "Invalid Username or Password"
     }
 }

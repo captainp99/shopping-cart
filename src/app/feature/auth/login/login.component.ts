@@ -11,6 +11,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
+  invalidUser = false;
 
   constructor(private fb: FormBuilder, private route: Router, private translate: TranslateService) { }
 
@@ -25,8 +26,13 @@ export class LoginComponent implements OnInit {
     });
   }
   login(): void {
-    localStorage.setItem('isLoggedIn', 'Yes');
-    this.route.navigateByUrl('/home');
+    const formValue = this.loginForm.value;
+    if (formValue.username === 'guest' && formValue.password === 'guest') {
+      localStorage.setItem('isLoggedIn', 'Yes');
+      this.route.navigateByUrl('/home');
+      return;
+    }
+    this.invalidUser = true;
   }
 
   goToHome(): void {

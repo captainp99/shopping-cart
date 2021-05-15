@@ -89,6 +89,7 @@
         "backToHome" : "De retour à la maison",
         "application" : "Application",
         "loginPage" : "Page de connexion",
-        "loginMessage" : "Connectez-vous d'ici pour accéder."
+        "loginMessage" : "Connectez-vous d'ici pour accéder.",
+        "invalidUser": "Nom d'utilisateur ou mot de passe invalide"
       }
   }
