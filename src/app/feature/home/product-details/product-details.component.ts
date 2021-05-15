@@ -20,10 +20,12 @@ export class ProductDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(params => { this.productId = params.id; });
     this.route.data.subscribe(data => {
-      this.productList = data.product.products;
-      // tslint:disable-next-line: radix
-      this.productList = this.productList.filter(x => x.id === parseInt(this.productId));
-      this.product = this.productList[0];
+      if (data.product !== undefined) {
+        this.productList = data.product.products;
+        // tslint:disable-next-line: radix
+        this.productList = this.productList.filter(x => x.id === parseInt(this.productId));
+        this.product = this.productList[0];
+      }
     });
   }
 

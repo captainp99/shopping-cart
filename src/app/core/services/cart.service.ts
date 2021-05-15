@@ -13,6 +13,7 @@ export class CartService {
 
     count = 0;
 
+    thankYouPageAllowed = false;
     bSubject = new BehaviorSubject(this.count);
     local: Array<Cart> = new Array<Cart>();
     bCartSubject = new BehaviorSubject(this.local);
@@ -44,7 +45,7 @@ export class CartService {
     }
 
     deleteItem(product: Product, cou: number): void {
-        const x = this.local.find(y => y.cartList === product);
+        const x = this.local.find(y => y.cartList.id === product.id);
         x.cou = x.cou - cou;
         if (x.cou <= 0) {
             this.local = this.local.filter(y => y.cartList !== product);

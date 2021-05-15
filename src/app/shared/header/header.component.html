@@ -11,10 +11,10 @@
         <div class="input-group">
         <div class="input-group-prepend">
         <select class="input-group-text" [(ngModel)] = "category" name = "category" (change) = "filter()" name="category_name">
-          <option value="All" selected>All</option>
-          <option value="Clothing">Clothing</option>
-          <option value="Electronics">Electronics</option>
-          <option value="Accessories">Accessories</option>
+          <option value="All" selected>{{'header.all' | translate}}</option>
+          <option value="Clothing">{{'header.clothing' | translate}}</option>
+          <option value="Electronics">{{'header.electronics' | translate}}</option>
+          <option value="Accessories">{{'header.accessories' | translate}}</option>
         </select>
         <input class="form-control mr-sm-2" type="search" [(ngModel)] = "searchString" name = "searchString" placeholder="{{'header.search' | translate}}" aria-label="Search" (keyup) = "buttonEnable()">
       </div>
@@ -35,7 +35,7 @@
           <li class="nav-item dropdown" style="margin-top: 5px;">
             <select class="dropdown-item" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" #langSelect (change) = "translate.use(langSelect.value)">
             
-              <option *ngFor = "let lang of translate.getLangs()" [value] = "lang" [selected] = "translate.getDefaultLang() == lang" >{{lang}}</option>
+              <option *ngFor = "let lang of translate.getLangs()" [value] = "lang" [selected] = "translate.currentLang == lang" >{{lang}}</option>
             </select>
           </li>
         </ul>

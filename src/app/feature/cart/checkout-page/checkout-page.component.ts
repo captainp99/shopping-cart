@@ -1,4 +1,3 @@
-import { Route } from '@angular/compiler/src/core';
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -32,6 +31,9 @@ export class CheckoutPageComponent implements OnInit {
       }
       );
     });
+    if (this.cartItmesCount === 0) {
+      this.router.navigateByUrl('/home');
+    }
     this.initializeForm();
   }
 
@@ -54,6 +56,7 @@ export class CheckoutPageComponent implements OnInit {
   }
 
   onFormSubmit(): void {
+    this.cartService.thankYouPageAllowed = true;
     this.cartService.clearCart();
     this.router.navigateByUrl('/home/thankyou');
   }

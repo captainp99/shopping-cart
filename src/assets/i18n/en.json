@@ -3,7 +3,11 @@
       "home" : "Home",
       "search" : "Search",
       "login" : "Login",
-      "logout" : "Logout"
+      "logout" : "Logout",
+      "all": "All",
+      "clothing": "Clothing",
+      "electronics": "Electronics",
+      "accessories": "Accessories"
 
     },
 

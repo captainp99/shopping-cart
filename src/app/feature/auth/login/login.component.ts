@@ -26,11 +26,11 @@ export class LoginComponent implements OnInit {
   }
   login(): void {
     localStorage.setItem('isLoggedIn', 'Yes');
-    this.route.navigate(['home']);
+    this.route.navigateByUrl('/home');
   }
 
   goToHome(): void {
-    this.route.navigate(['home']);
+    this.route.navigateByUrl('/home');
   }
 
   getControlValidationClasses(control: AbstractControl): object {

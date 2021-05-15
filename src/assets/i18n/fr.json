@@ -3,7 +3,11 @@
         "home" : "Domicile",
         "search" : "Rechercher",
         "login" : "Connexion",
-        "logout" : "Se déconnecter"
+        "logout" : "Se déconnecter",
+        "all": "Toute",
+        "clothing": "Vêtements",
+        "electronics": "Électronique",
+        "accessories": "Accessoires"
   
       },
 
